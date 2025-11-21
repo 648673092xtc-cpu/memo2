@@ -167,3 +167,249 @@ Note: If a pop-up appears with the message "Saving comments in bulk could be slo
 adb69.png
 
 Review the AI-generated comments for the columns, then click Save all.
+
+Exercise 2: AI-Driven Insights with Microsoft Foundry & Genie
+Task 2.1: Create a Databricks Assistant AI/BI Genie
+In this task, we will create Genie workspace in Databricks.
+
+In the left menu bar, click on Genie.
+databricks
+
+Click on + New.
+databricks
+
+Search for schema56880144 schema in the search bar.
+
+Select gold_transactions table.
+
+Click on Create.
+
+adb16.png
+
+Click on New Space in the top left to edit the name and replace it with Zava_Genie and press enter.
+databricks
+
+Paste the following question in chat box and click on send.
+what is the percentage of fraudulent transactions in my dataset?
+
+Gini.png
+
+Observe the response from Genie, then click Show code to view the code Genie used to formulate the answer.
+Note: The responses from Genie may not match the ones in the screenshot but will provide a similar response.
+
+Gini1.png
+
+Task 2.2: Use Agent Created Inside Microsoft Foundry with Custom Web App
+In this Task, You'll use the AI agent within a custom web application to deliver interactive, data-powered intelligence.
+
+In a new tab of your VM browser enter the URL https://app-aifoundry-genieintegration.azurewebsites.net/#/landing-page and press Enter key.
+Note: If a permissions request pop-up appears, click the Accept button.
+
+AIFoundry1.png
+
+Select the terms and conditions checkbox, then click Login.
+Webapp Login.png
+
+Click on the robot icon located at the bottom-right corner of the page.
+
+
+Click on the first pre-populated question.
+
+
+Observe the response.
+
+
+Click on the second pre-populated question and observe the response.
+
+Exercise 3: Azure Databricks Mirrored Catalog in Microsoft Fabric
+Task 3.1: Mirror Unity Catalog Table into Fabric's OneLake
+Mirroring the Azure Databricks Catalog structure in Fabric allows seamless access to the underlying catalog data through shortcuts. This means that any changes made to the data are instantly reflected in Fabric, without the need for data movement or replication. Let's step into Data Engineer's shoes to create a Mirrored Azure Databricks Catalog.
+
+In a new tab of your VM browser enter the URL https://app.fabric.microsoft.com and press Enter key.
+Note: Close any pop-up that appears on the screen throughout the lab.
+
+adb49.png
+
+From the left navigation pane, click on Workspaces and then the + New workspace button.
+adb33.png
+
+Type the name fabric56880144 validate the available name and click Apply.
+adb34.png
+
+Note: Close any pop-up that appears on the screen.
+
+adb50.png
+
+Select New item from menu bar.
+adb36.png
+
+In the New item window, search Mirrored Azure Databricks catalog and select it.
+adb51.png
+
+When the New source window pops up, click on the Create new connection and select Service principal from Authentication kind dropdown box, and enter the following details.
+ADBC1.png
+
+Enter the following details for the Service principal authentication.
+In the URL field enter https://adb-3218079371877032.12.azuredatabricks.net
+
+Tenant ID: f94768c8-8714-4abe-8e2d-37a64b18216a
+
+Service principal client ID: 95121828-71fb-4854-a9e6-cb7294eff8a2
+
+Service principal Key: BBk8Q~mXd82ufaAgW9jHB6CFSZYyueYTd0WqSdzC
+
+click on the Connect button.
+Task-2.3_7.png
+
+Note: Close any pop-up that appears on the screen.
+
+Click on Next button.
+Task-2.3_7.1.png
+
+In the Choose data screen, select the Catalog name as zava_unity_catalog from the dropdown box, and select the fraud-detection schema if not selected, scroll down then select the checkbox Automatically sync future catalog changes for the selected schema (to mirror future tables) if not ticked and click on Next button.
+Task-2.3_8.png
+
+Click on the Create button.
+adb54.png
+
+Note: Wait for the notification confirming that the mirroring is complete (as shown in the "Shortcuts created" message).
+
+adb52.png
+
+Click on the Monitor catalog button to track the mirroring status and then close it.
+Task-2.3_10.1.png
+
+Click on the View SQL endpoint button. You can also select the tables to preview data.
+Task-2.3_10.png
+
+Task 3.2: Create a semantic model in Direct Lake mode and use Power BI to visualize and generate insights
+Click on New semantic model.
+
+
+Paste the semantic model name as fraud_detection, search gold_transactions, select it and then click on Confirm.
+adb60.png
+
+Wait for the semantic model to be created, then select the workspace from the left menu.
+adb55.png
+
+Hover over the Semantic Model and click the Refresh icon.
+refresh.png
+
+Note: Wait for the semantic model to refresh.
+
+Click on the Ellipses (3 dots) next to fraud_detection Semantic Model to load the dropdown menu. Select Create report from the dropdown.
+
+
+Click on the Copilot button and click on Get started.
+adb57.png
+
+Paste the following question into the Copilot chat and on send.
+What's in my data?
+
+PowerBICopilot.png
+
+Paste the following question into the Copilot chat and on send.
+Create a report to analyse in detail only fraudulent transactions.
+
+Note: Wait for the report to load.
+
+semantic6.png
+
+Look at the response.
+Note: The responses from Copilot may not match the ones in the screenshot.
+
+adb59.png
+
+Paste the following question into the Copilot chat and take a look at the response.
+Based on the data of this report, what can be done to reduce the fraudulent transactions, and should I focus on.
+
+adb68.png
+
+Exercise 4 [OPTIONAL]: Copilot Studio for Low-Code Automation
+Task 4.1: Create an agent and connect Azure Databricks as its knowledge source to support Business Q&A.
+In a new tab of your VM browser enter the URL https://copilotstudio.microsoft.com/ and press Enter key.
+
+On the welcome screen for Microsoft Copilot Studio, Click on the Get Started button to proceed.
+
+adb37.png
+
+Select Agents from the left menu, and click + New agent.
+Note: Wait for page to load and refresh the page
+
+cs8.png
+
+Note: Close any pop-up that appears on the screen.
+
+adb38.png
+
+Click on Configure, enter the agent name as Databricks Agent and add the description Responds to queries using data from your Databricks workspace.
+config.png
+
+On the right menu, click Create.
+adb40.png
+
+Note: Wait for the agent to load.
+
+On the knowledge page, click + Add knowledge to include a knowledge source.
+adb41.png
+
+On the Add knowledge page, click Advanced, then select Azure Databricks.
+Note: Ensure that you select Azure Databricks only, as Databricks is also available as a separate connection option.
+
+adb62.png
+
+On the Select Azure Databricks connection pane, click on Not connected dropdown and select Create new connection.
+adb42.png
+
+Navigate back to your Databricks workspace, click SQL Warehouses from the left menu, select SQL Warehouses at the top, and then click Serverless Starter Warehouse.
+
+
+On the Serverless Starter Warehouse page, click on start button, then click Connection Details, and copy the Server Hostname and HTTP Path.
+
+
+In Copilot Studio, on the Azure Databricks Connection page, paste the Server Hostname and HTTP Path you copied earlier and click on Create.
+
+
+In the pop-up window, select your account and click Sign in.
+
+
+Select zava_unity_catalog and click Select.
+
+
+Search for schema56880144 schema, select the gold_transactions tables within it, and click Add to Agent.
+
+
+Note: Wait for the agent to load.
+
+Paste the following question to Test your agent.
+What is the average transaction amount for fraudulent vs non-fraudulent transactions?
+
+cs5.png
+
+Click on Allow.
+cs6.png
+
+Look at the Response.
+cs7.png
+
+Note: The agent may not respond initially after adding a new data source. Re-enter the question or start a + New test session to get a response.
+
+Task 4.2: Publish the agent in Microsoft Teams channels and make it accessible to users.
+Click on +7 at the top, then select Channels from the dropdown menu to view channel options.
+adb43.png
+
+Note: The number displayed (such as +7) may vary depending on your screen's resolution or window size, as it indicates the count of additional menu options not visible in the main navigation bar.
+
+The Microsoft Teams channel should appear in the list, for this lab the agent has already been published and added to Teams.
+adb44.png
+
+In a new tab of your VM browser enter the URL https://click-by-click.azurewebsites.net/#preview/mhw2w6exgz21zno97ch and press Enter key.
+Follow click by click url, then navigate to Microsoft Teams to see the agent in action.
+C2CTeams.png
+
+Congratulations! As Data Engineers and Data Analysts, you have empowered Zava to transform its disparate data sources into actionable insights-driving growth, enhancing customer satisfaction, and securing a competitive edge.
+
+Feedback
+Your feedback is very useful to us and helps us improve our labs for future events. Please click on the link below for a short survey.
+
+LAB 535 Feedback
